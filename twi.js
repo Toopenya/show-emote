@@ -101,7 +101,15 @@ class Twi {
 
   useCommands(prefix = "") {
     this.on("message", (message) => {
-      this.runCommand("", message, "");
+      const emote = message.emotes[0];
+      if (emote && !showing) {
+        spawnEmote(emote);
+        showing = true;
+        setTimeout(() => {
+          showing = false;
+          document.getElementById("app").innerHTML = "";
+        }, 1000 * 5);
+      }
     });
   }
 
