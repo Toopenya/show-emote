@@ -26,6 +26,8 @@ function spawnEmote(emote) {
   sprite.src = emote.cdn.high;
   sprite.style.display = "block";
   sprite.style.position = "fixed";
+  sprite.style.height = "84px";
+  sprite.style.objectFit = "contain";
   sprite.classList.add("emote");
   sprite.classList.add("fade-in");
 
@@ -41,6 +43,6 @@ twi.addCommand("", (message, _args) => {
     setTimeout(() => {
       showing = false;
       document.getElementById("app").innerHTML = "";
-    }, 1000 * 5);
+    }, 1000 * 4);
   }
 });
