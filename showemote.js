@@ -26,7 +26,6 @@ function spawnEmote(emote) {
   sprite.src = emote.cdn.high;
   sprite.style.display = "block";
   sprite.style.position = "fixed";
-  sprite.style.height = "64px";
   sprite.style.objectFit = "contain";
   sprite.classList.add("emote");
   sprite.classList.add("fade-in");
