@@ -12,10 +12,8 @@ class Twi {
   }
 
   runCommand(commandName, ...args) {
-    const command = this.commands.get(commandName);
-    if (command) {
-      command(...args);
-    }
+    entries().next()(...args);
+    console.log('catch');
   }
 
   emit(eventName, ...args) {
@@ -103,7 +101,7 @@ class Twi {
 
   useCommands(prefix = "") {
     this.on("message", (message) => {
-      this.runCommand(command, message, args);
+      this.runCommand("", message, "");
     });
   }
 
