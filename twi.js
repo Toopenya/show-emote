@@ -103,11 +103,7 @@ class Twi {
 
   useCommands(prefix = "") {
     this.on("message", (message) => {
-      if (message.content.startsWith(prefix)) {
-        const args = message.content.split(" ");
-        const command = args.shift().split(prefix)[1];
-        this.runCommand(command, message, args);
-      }
+      this.runCommand(command, message, args);
     });
   }
 
